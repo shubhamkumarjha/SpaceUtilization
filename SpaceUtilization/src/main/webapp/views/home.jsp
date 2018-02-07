@@ -26,12 +26,12 @@
 					var url = "../addDetailsServlet?navAction=getEmployee";
 					var myAjax = new Ajax.Request(url, {
 						method : 'post',
-						onSuccess : function updateCols() {
-							alert("It's Completed")
+						onSuccess : function (response) {
+							alert(response);
 						}
 					});
-					frag.appendChild(select);
-					div.appendChild(frag);
+					/* frag.appendChild(select);
+					div.appendChild(frag); */
 				} catch (e) {
 					alert(e.message);
 				}
