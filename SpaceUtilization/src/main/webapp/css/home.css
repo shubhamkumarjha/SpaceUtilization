@@ -1,0 +1,62 @@
+
+div.container {
+	width: 100%;
+	border: 2px solid gray;
+}
+
+.navmenu {
+	float: left;
+	width:15%;
+	border-style:groove;
+	margin: 0;
+}
+.pageinnercontent {
+	width:85%;
+	hight:85%;
+	border-style:groove;
+}
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul a:link, a:visited, a:hover, a:active {
+	background-color: transparent;
+	color: black;
+	padding: 14px 25px;
+	text-decoration: none;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.pageheader {
+	height:10%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	clear: left;
+	padding: 1em;
+}
+.pagefooter {
+	height:5%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	clear: left;
+	padding: 1em;
+}
+.pagecontainer {
+	height:85%;
+}
+.container {
+	height:100%;
+}
+container inner {
+	margin-top: 0;
+	margin-left: 200px;
+	overflow: hidden;
+	border-left: 2px solid gray;
+	padding: 1em;
+	padding-left: 180px;
+	background-color: silver;
+}
