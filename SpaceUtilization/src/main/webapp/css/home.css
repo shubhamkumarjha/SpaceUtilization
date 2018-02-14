@@ -19,7 +19,6 @@ nav ul {
 	list-style-type: none;
 	padding: 0;
 }
-
 nav ul a:link, a:visited, a:hover, a:active {
 	background-color: transparent;
 	color: black;
@@ -51,12 +50,7 @@ nav ul a:link, a:visited, a:hover, a:active {
 .container {
 	height:100%;
 }
-container inner {
-	margin-top: 0;
-	margin-left: 200px;
-	overflow: hidden;
-	border-left: 2px solid gray;
-	padding: 1em;
-	padding-left: 180px;
-	background-color: silver;
+div.dropdownDiv{
+	visibility: hidden;
 }
+

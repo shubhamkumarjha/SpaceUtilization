@@ -20,18 +20,32 @@
 
 			case 3:
 				try {
-					var div = document.querySelector("#inner");
+					/* var div = document.querySelector("#pageinnercontent");
 					frag = document.createDocumentFragment();
-					select = document.createElement("select");
+					select = document.createElement("select"); */
+					document.getElementById("dropdownDiv").style.visibility = "visible";
 					var url = "../addDetailsServlet?navAction=getEmployee";
+					var str=response.responseText;
 					var myAjax = new Ajax.Request(url, {
 						method : 'post',
 						onSuccess : function (response) {
-							alert(response);
+							/* alert("response:"+response.responseText); */
+							var str=response.responseText;
+							for(var i=0;i<str.length;i++){
+								
+								myHash['one'] = [1,10,5];
+								myHash['two'] = [2];
+								myHash['three'] = [3, 30, 300];
+								
+							}
 						}
 					});
-					/* frag.appendChild(select);
-					div.appendChild(frag); */
+					//document.getElementById('dropdown-content').innerHTML=response;
+					
+					/* 
+					document.getElementById(id).style.visibility = "hidden";
+					document.getElementById(id).style.visibility = "visible";
+					*/
 				} catch (e) {
 					alert(e.message);
 				}
@@ -42,6 +56,7 @@
 			}
 
 		}
+		var myHash = {};
 	</script>
 	<div class="container">
 		<div class="pageheader">
@@ -60,9 +75,15 @@
 							Room</a></li>
 				</ul>
 			</nav>
-			<div id="pageinnercontent"></div>	
+			<div id="pageinnercontent">
+				<div class="dropdown" id="dropdownDiv">
+					<button class="dropbtn">Dropdown</button>
+					<div class="dropdown-content">
+						<!-- <a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link3</a> -->
+					</div>
+				</div>
+			</div>
 		</div>
-		
 		<div class="pagefooter">Copyright &copy SUS 2018</div>
 	</div>
 </body>
