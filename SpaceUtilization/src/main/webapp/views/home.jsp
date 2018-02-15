@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Space Utilization System</title>
 <script src="../js/prototype.js"></script>
+<script src="../js/jquery.js"></script>
 <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
@@ -25,19 +26,24 @@
 					select = document.createElement("select"); */
 					document.getElementById("dropdownDiv").style.visibility = "visible";
 					var url = "../addDetailsServlet?navAction=getEmployee";
-					var str=response.responseText;
+					var str="";
 					var myAjax = new Ajax.Request(url, {
 						method : 'post',
 						onSuccess : function (response) {
-							/* alert("response:"+response.responseText); */
-							var str=response.responseText;
+							var res=response.responseText;
+							var str=res.split(",");
 							for(var i=0;i<str.length;i++){
-								
-								myHash['one'] = [1,10,5];
-								myHash['two'] = [2];
-								myHash['three'] = [3, 30, 300];
-								
+								var temp=str[i];
+								var s=temp.split(":");
+								myHash[s[0]]=s[1];
 							}
+							console.log(myHash);
+
+						    jQuery("#populateMenu").click( function () {
+						        for (var i=0;i<myHash.length;i++){
+						            jQuery('#mySelect').append(jQuery("<option></option>").val(i.text(myHash[i])));
+						        }
+						    });
 						}
 					});
 					//document.getElementById('dropdown-content').innerHTML=response;
@@ -75,15 +81,21 @@
 							Room</a></li>
 				</ul>
 			</nav>
-			<div id="pageinnercontent">
-				<div class="dropdown" id="dropdownDiv">
+			
+    	
+
+			<div id="pageinnercontent" class="hidden">
+			<button id="populateMenu" >Populate menu</button>
+
+			<select id="mySelect">
+			<!-- 	<div class="dropdown" id="dropdownDiv">
 					<button class="dropbtn">Dropdown</button>
 					<div class="dropdown-content">
-						<!-- <a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link3</a> -->
+						
 					</div>
 				</div>
-			</div>
-		</div>
+			</div>-->
+		</div> 
 		<div class="pagefooter">Copyright &copy SUS 2018</div>
 	</div>
 </body>

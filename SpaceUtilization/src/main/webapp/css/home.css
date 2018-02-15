@@ -2,6 +2,7 @@
 div.container {
 	width: 100%;
 	border: 2px solid gray;
+	visibility: hidden;
 }
 
 .navmenu {
@@ -51,6 +52,6 @@ nav ul a:link, a:visited, a:hover, a:active {
 	height:100%;
 }
 div.dropdownDiv{
-	visibility: hidden;
+	background-color: gray;
 }
 

@@ -34,9 +34,6 @@ public class AddDetailsServlet extends HttpServlet {
 					System.out.println("==>"+data);
 					response.setContentType("application/json");
 					response.getWriter().write(data.toString());
-					/*request.setAttribute("options", data);
-					RequestDispatcher rd= request.getRequestDispatcher("/home.jsp");
-					rd.forward(request, response);*/
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -50,13 +47,11 @@ public class AddDetailsServlet extends HttpServlet {
 			String query="select employee_id,employee_name from employee where isActive=1";
 			ps=con.prepareStatement(query);
 			rs=ps.executeQuery();
-			sb.append("{");
 			while(rs.next()){
 				if(rs.getInt(1)!=0 && rs.getString(2)!=null){
 					sb.append(rs.getInt(1)+":"+rs.getString(2)+",");
 				}
 			}
-			sb.append("}");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
