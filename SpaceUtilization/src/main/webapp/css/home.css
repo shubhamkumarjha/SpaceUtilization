@@ -2,7 +2,6 @@
 div.container {
 	width: 100%;
 	border: 2px solid gray;
-	visibility: hidden;
 }
 
 .navmenu {
@@ -12,6 +11,7 @@ div.container {
 	margin: 0;
 }
 .pageinnercontent {
+	visibility:hidden;
 	width:85%;
 	hight:85%;
 	border-style:groove;
@@ -32,18 +32,21 @@ nav ul a:link, a:visited, a:hover, a:active {
 .pageheader {
 	height:10%;
 	color: white;
-	background-color: black;
+	background-color: gray;
 	text-align: center;
 	clear: left;
 	padding: 1em;
 }
 .pagefooter {
 	height:5%;
+	width:100%;
 	color: white;
-	background-color: black;
+	background-color: gray;
 	text-align: center;
 	clear: left;
 	padding: 1em;
+	position: absolute; 
+	bottom: 0;
 }
 .pagecontainer {
 	height:85%;
@@ -51,7 +54,15 @@ nav ul a:link, a:visited, a:hover, a:active {
 .container {
 	height:100%;
 }
-div.dropdownDiv{
+.dropdown{
+	visibility:hidden;
 	background-color: gray;
 }
+button.populateMenu{
+	visibility:hidden;
+}
+div.myDropdown{
+	visibility:hidden;
+}
+
 

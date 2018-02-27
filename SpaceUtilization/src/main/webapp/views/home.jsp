@@ -21,15 +21,15 @@
 
 			case 3:
 				try {
-					/* var div = document.querySelector("#pageinnercontent");
-					frag = document.createDocumentFragment();
-					select = document.createElement("select"); */
-					document.getElementById("dropdownDiv").style.visibility = "visible";
+					debugger;
+					document.getElementById("pageinnercontent").style.visibility = "visible";
+					document.getElementById("populateMenu").style.visibility = "visible";
 					var url = "../addDetailsServlet?navAction=getEmployee";
 					var str="";
 					var myAjax = new Ajax.Request(url, {
 						method : 'post',
 						onSuccess : function (response) {
+							//alert(response.responseText);
 							var res=response.responseText;
 							var str=res.split(",");
 							for(var i=0;i<str.length;i++){
@@ -38,20 +38,9 @@
 								myHash[s[0]]=s[1];
 							}
 							console.log(myHash);
-
-						    jQuery("#populateMenu").click( function () {
-						        for (var i=0;i<myHash.length;i++){
-						            jQuery('#mySelect').append(jQuery("<option></option>").val(i.text(myHash[i])));
-						        }
-						    });
+							myHashAppend();
 						}
-					});
-					//document.getElementById('dropdown-content').innerHTML=response;
-					
-					/* 
-					document.getElementById(id).style.visibility = "hidden";
-					document.getElementById(id).style.visibility = "visible";
-					*/
+					});  
 				} catch (e) {
 					alert(e.message);
 				}
@@ -62,9 +51,20 @@
 			}
 
 		}
+		function myHashAppend(){
+			debugger;
+			for (var i in myHash) {
+	            $('#myDropdown').append(myHash[i]);
+	            console.log(myHash[i]);
+			}  
+		}
+		function myFunction() {
+			debugger;
+		    document.getElementById("myDropdown").classList.toggle("show");
+		}
+		
 		var myHash = {};
 	</script>
-	<div class="container">
 		<div class="pageheader">
 			<h3>Space Utilization System</h3>
 		</div>
@@ -85,16 +85,11 @@
     	
 
 			<div id="pageinnercontent" class="hidden">
-			<button id="populateMenu" >Populate menu</button>
-
-			<select id="mySelect">
-			<!-- 	<div class="dropdown" id="dropdownDiv">
-					<button class="dropbtn">Dropdown</button>
-					<div class="dropdown-content">
-						
-					</div>
+			<div class="dropdown">
+				<button id="populateMenu" onclick="myFunction()" class="dropbtn">Dropdown</button>
+				<div id="myDropdown" class="dropdown-content">
 				</div>
-			</div>-->
+			</div>
 		</div> 
 		<div class="pagefooter">Copyright &copy SUS 2018</div>
 	</div>
