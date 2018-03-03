@@ -61,8 +61,9 @@ nav ul a:link, a:visited, a:hover, a:active {
 button.populateMenu{
 	visibility:hidden;
 }
-div.myDropdown{
+div.mySelect{
 	visibility:hidden;
 }
+
 
 

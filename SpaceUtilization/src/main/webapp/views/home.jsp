@@ -54,13 +54,17 @@
 		function myHashAppend(){
 			debugger;
 			for (var i in myHash) {
-	            $('#myDropdown').append(myHash[i]);
-	            console.log(myHash[i]);
-			}  
+	            console.log(myHash[i]);  
+				var x = document.getElementById("mySelect");
+		   		 var c = document.createElement("option");
+		   		 c.text = myHash[i];
+		    	x.options.add(c, i);
+			}
 		}
 		function myFunction() {
 			debugger;
-		    document.getElementById("myDropdown").classList.toggle("show");
+			document.getElementById("mySelect").style.visibility = "visible";
+		    document.getElementById("mySelect").classList.toggle("show");
 		}
 		
 		var myHash = {};
@@ -86,9 +90,9 @@
 
 			<div id="pageinnercontent" class="hidden">
 			<div class="dropdown">
-				<button id="populateMenu" onclick="myFunction()" class="dropbtn">Dropdown</button>
-				<div id="myDropdown" class="dropdown-content">
-				</div>
+				<button id="populateMenu" onclick="myFunction()" class="dropbtn" style="margin-top: 10px; margin-left:  10px;	float:left;	position: relative;">Dropdown</button>
+				<select id="mySelect" size="8" style="margin-left:  -80px;	margin-top:  40px;	height:  200px;">
+				</select>
 			</div>
 		</div> 
 		<div class="pagefooter">Copyright &copy SUS 2018</div>
